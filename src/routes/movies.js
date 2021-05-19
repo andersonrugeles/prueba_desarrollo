@@ -4,10 +4,9 @@ const modelCategory=require('../models/table_categories');
 const modelMovies=require('../models/table_movies');
 
 router.get('/index',async(req,res)=>{
-        const movies=await modelMovies.find();
+        const movies=await modelMovies.find().populate('category',{category:1});
         const categories=await modelCategory.find();
-        const categoryName=await modelCategory.find({},{"category":1,"_id":0});
-        res.render('index/movies',{categories,movies,categoryName});
+        res.render('index/movies',{categories,movies});
 });
 router.post('/add_movies',async(req,res)=>{
     const movies=new modelMovies(req.body);

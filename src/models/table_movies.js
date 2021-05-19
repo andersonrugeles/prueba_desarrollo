@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const movies = new Schema({
     movie: String,
     director:String,
-    category: { type: String, ref: "categories" } 
+    category: [{ type: Schema.ObjectId, ref: "categories" } ]
   
 });
 

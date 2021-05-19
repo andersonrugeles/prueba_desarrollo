@@ -27,7 +27,7 @@
                             <label for="category" class="text-info">Category:</label><br>
                             <select class="form-select" aria-label="Default select example" required name="category">
                              {{#each categories}}
-                             <option value="{{category}}">{{category}}</option>
+                             <option value="{{_id}}">{{category}}</option>
                                {{/each}}
                             </select>
                             </div>
@@ -57,7 +57,9 @@
     <tr>
       <th scope="row">{{movie}}</th>
       <td>{{director}}</td>
+      {{#each category}}
       <td>{{category}}</td>
+      {{/each}}
       <td class="btn-edit">
        <a href="/edit/{{_id}}">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modificarProducto{{idproducto}}">
