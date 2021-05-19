@@ -3,7 +3,7 @@ const router= express.Router();
 const modelCategory=require('../models/table_categories');
 const modelMovies=require('../models/table_movies');
 
-router.get('/',async(req,res)=>{
+router.get('/index',async(req,res)=>{
         const movies=await modelMovies.find();
         const categories=await modelCategory.find();
         const categoryName=await modelCategory.find({},{"category":1,"_id":0});
@@ -12,13 +12,13 @@ router.get('/',async(req,res)=>{
 router.post('/add_movies',async(req,res)=>{
     const movies=new modelMovies(req.body);
     await movies.save();
-    res.redirect('/');
+    res.redirect('/index');
    
 });
 router.get('/delete/:id',async(req,res)=>{
     const {id}=req.params;
     await modelMovies.remove({_id:id});
-    res.redirect('/');
+    res.redirect('/index');
 });
 
 router.get('/edit/:id',async(req,res)=>{
@@ -32,7 +32,7 @@ router.get('/edit/:id',async(req,res)=>{
 router.post('/edit/:id',async(req,res)=>{
     const {id}=req.params;
     await modelMovies.updateOne({_id:id},req.body);
-    res.redirect('/');
+    res.redirect('/index');
    
 });
 
