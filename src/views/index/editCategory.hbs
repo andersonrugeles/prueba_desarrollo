@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<body>
+    <div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+     <div id="movies">
+        <h3 class="text-center text-white pt-5">Categories form Edit</h3>
+        <div class="container container-form-movies-edit">
+         
+                 <div id="login-column">
+                    <div id="login-box">
+                        <form id="login-form" class="form" action="/editCategory/{{categories._id}}" method="post">
+                            <h3 class="text-center text-info">Edit Categories</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Name:</label><br>
+                                <input type="text" name="category" id="category" class="form-control" value="{{categories.category}}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Save">
+                            </div>
+                      </form>
+                    </div>
+                </div>
+           </div>
+    </div>
+    </div>
+  
+  </div>
+   
+  <script>
+  </script>
+</body>
