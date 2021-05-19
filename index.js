@@ -7,7 +7,7 @@ const app= express();
 
 //configuraciones
 app.set('port',process.env.PORT || 4000);
-app.set('views',path.join(__dirname,'views'));
+app.set('views',path.join(__dirname,'./src/views'));
 app.engine('.hbs',exphbs({
     defaultLayout:'main',
     layoutsDir: path.join(app.get('views'),'layouts'),
@@ -41,7 +41,7 @@ app.use(require('./src/routes/categories'));
 
 
 //public
-app.use('/static',express.static(path.join(__dirname,'public')));
+app.use('/static',express.static(path.join(__dirname,'./src/public')));
 
 //inicia el server
 app.listen(app.get('port'),()=>{
