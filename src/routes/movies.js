@@ -22,7 +22,7 @@ router.get('/delete/:id',async(req,res)=>{
 
 router.get('/edit/:id',async(req,res)=>{
     const {id}=req.params;
-    const movies=await modelMovies.findById(id);
+    const movies=await modelMovies.findById(id).populate('category',{category:1});
     const categories=await modelCategory.find();
     res.render('index/editMovie',{movies,categories});
     

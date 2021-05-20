@@ -26,11 +26,15 @@
                            <div class="form-group">
                             <label for="category" class="text-info">Category:</label><br>
                             <select class="form-select" aria-label="Default select example" required name="category">
-                             {{#each categories}}
-                             <option value="{{category}}">{{category}}</option>
-                               {{/each}}
-                            </select>
+                        
+                              {{#each categories}}
+                              
+                                <option value="{{_id}}">{{category}}</option>
+                                {{/each}}
+ 
+                             </select>
                             </div>
+                                           
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Save">
